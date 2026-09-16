@@ -1,20 +1,34 @@
-import { defineConfig, defineTokens } from "@chakra-ui/react";
+import { defineConfig, defineSemanticTokens, defineTokens } from "@chakra-ui/react";
 
 export const tokens = defineTokens({
   colors: {
-    textForLight: { value: "#1a1a1a" },
-    textForDark: { value: "#d6d6d6" },
+    // ─── Neutral ────────────
+    neutral: {
+      50: { value: "#f5f5f5" },  // bg (light)
+      100: { value: "#ebebeb" },
+      200: { value: "#DDDDDD" }, // border (light)
+      300: { value: "#d6d6d6" }, // text (dark mode)
+      400: { value: "#A1A1AA" }, // text muted (dark mode)
+      500: { value: "#71717A" }, // text muted (light)
+      600: { value: "#575757" }, // secondary text
+      700: { value: "#222222" }, // border (dark mode)
+      800: { value: "#1a1a1a" }, // text (light)
+      900: { value: "#18181B" }, // bg (dark mode)
+    },
+  },
+});
 
-    secondaryTextColor: { value: "#575757" },
+export const semanticTokens = defineSemanticTokens({
+  colors: {
+    theme: {
+      text: { value: { base: "{colors.neutral.800}", _dark: "{colors.neutral.300}" } },
+      textSecondary: { value: { base: "{colors.neutral.600}", _dark: "{colors.neutral.600}" } },
+      textMuted: { value: { base: "{colors.neutral.500}", _dark: "{colors.neutral.400}" } },
 
-    textMutedForLight: { value: "#71717A" },
-    textMutedForDark: { value: "#A1A1AA" },
+      bg: { value: { base: "{colors.neutral.50}", _dark: "{colors.neutral.900}" } },
 
-    bgForLight: { value: "#f5f5f5" },
-    bgForDark: { value: "#18181B" },
-
-    borderColorForLight: { value: "#DDDDDD" },
-    borderColorForDark: { value: "#222222" },
+      border: { value: { base: "{colors.neutral.200}", _dark: "{colors.neutral.700}" } },
+    },
   },
 });
 
@@ -28,5 +42,6 @@ export const config = defineConfig({
       "2xl": "1920px", // very big screens (optional)
     },
     tokens,
+    semanticTokens,
   },
 });
