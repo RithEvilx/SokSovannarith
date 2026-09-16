@@ -1,0 +1,37 @@
+import { useTranslation } from "react-i18next";
+import { Box, Flex, List, Text } from "@chakra-ui/react";
+// Style
+import { ContainerHoverStyle, useColorModeTheme } from "@/apps/styles/style";
+// Icon
+import { LuInfo } from "react-icons/lu";
+// Component
+import { AboutMeData } from "@/shared/data/AboutMeData";
+
+const AboutMeSection = () => {
+  const { t } = useTranslation();
+  const { textColorMode } = useColorModeTheme();
+
+  return (
+    <Flex {...ContainerHoverStyle}>
+      {/* Header */}
+      <Flex alignItems="center" gap="0.5rem">
+        <Box fontSize={{ base: "1.25rem", md: "1.15rem" }}>
+          <LuInfo />
+        </Box>
+        <Text fontWeight="semibold" fontSize={{ base: "lg", lg: "xl" }}>
+          {t("About Me")}
+        </Text>
+      </Flex>
+      {/* Description */}
+      <List.Root listStyleType="none" gap="0.5rem">
+        {AboutMeData.map((item, index) => (
+          <List.Item key={index} fontSize="sm" color={textColorMode}>
+            {t(item)}
+          </List.Item>
+        ))}
+      </List.Root>
+    </Flex>
+  );
+};
+
+export default AboutMeSection;
