@@ -13,7 +13,7 @@ import {
   VStack,
 } from "@chakra-ui/react";
 // Style
-import { ContainerHoverStyle, useColorModeTheme } from "@/apps/styles/style";
+import { ContainerHoverStyle } from "@/apps/styles/style";
 // Icon
 import { LuArrowLeft, LuGoal, LuStar } from "react-icons/lu";
 import { ProjectData } from "@/shared/data/ProjectData";
@@ -23,7 +23,6 @@ import { useEffect } from "react";
 const ProjectDetail = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
-  const { textMutedColorMode } = useColorModeTheme();
 
   // 1. Destructure the searchParams object
   const [searchParams] = useSearchParams();
@@ -65,7 +64,7 @@ const ProjectDetail = () => {
       {/* Header */}
       <Flex direction="column" gap={{ base: "0.5rem", lg: "0.75rem" }}>
         <Heading fontSize={{ base: "2xl", md: "3xl" }}>{project?.name}</Heading>
-        <Text color={textMutedColorMode}>{project?.description}</Text>
+        <Text color="theme.textMuted">{project?.description}</Text>
       </Flex>
       {/* Content */}
       <SimpleGrid columns={12} gap="1rem">
@@ -78,7 +77,7 @@ const ProjectDetail = () => {
                 </Box>
                 <Heading fontSize="xl">{t("System Objective")}</Heading>
               </Flex>
-              <Text color={textMutedColorMode}>{project?.story}</Text>
+              <Text color="theme.textMuted">{project?.story}</Text>
             </Flex>
             <Flex direction="column" gap="0.5rem">
               <Flex alignItems="center" gap="0.5rem">
@@ -91,7 +90,7 @@ const ProjectDetail = () => {
                 {project?.keyContributions?.map((key, idx) => (
                   <List.Item key={idx}>
                     <Span fontWeight="semibold">{key?.title}:</Span>{" "}
-                    <Span color={textMutedColorMode}>{key?.task}</Span>
+                    <Span color="theme.textMuted">{key?.task}</Span>
                   </List.Item>
                 ))}
               </List.Root>
@@ -128,7 +127,7 @@ const ProjectDetail = () => {
                 <Text fontWeight="semibold" fontSize={{ base: "lg", lg: "xl" }}>
                   {t("Disclaimer")}
                 </Text>
-                <Text color={textMutedColorMode}>{project.disclaimer}</Text>
+                <Text color="theme.textMuted">{project.disclaimer}</Text>
               </Flex>
             )}
           </VStack>

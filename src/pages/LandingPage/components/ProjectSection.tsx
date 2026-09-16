@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import { Box, Flex, GridItem, Heading, Image, Link, SimpleGrid, Text } from "@chakra-ui/react";
 // Style
-import { ContainerHoverStyle, useColorModeTheme } from "@/apps/styles/style";
+import { ContainerHoverStyle } from "@/apps/styles/style";
 // Icon
 import { LuChevronRight, LuFolderCode, LuGithub, LuScanEye } from "react-icons/lu";
 // Data
@@ -13,7 +13,6 @@ import { slugConvertor } from "@/shared/utils/slugConvertor";
 const ProjectSection = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
-  const { textMutedColorMode, borderColorMode, bgColorMode, textColorMode, focusColorMode } = useColorModeTheme();
 
   return (
     <Flex {...ContainerHoverStyle}>
@@ -30,12 +29,12 @@ const ProjectSection = () => {
         <Flex
           as="button"
           alignItems="center"
-          color={textMutedColorMode}
+          color="theme.textMuted"
           fontSize="sm"
           className="group"
           cursor="pointer"
           onClick={() => navigate("/projects")}
-          _focusVisible={{ outline: "2px solid", outlineColor: focusColorMode, rounded: "sm" }}
+          _focusVisible={{ outline: "2px solid", outlineColor: "blue.500", rounded: "sm" }}
         >
           <Text>{t("View All")}</Text>
           <Box _groupHover={{ transform: "translateX(3px)" }} _groupActive={{ transform: "translateX(3px)" }} transition="all 0.15s">
@@ -54,11 +53,11 @@ const ProjectSection = () => {
                 width="100%"
                 minHeight="50%"
                 border="1px solid"
-                borderColor={borderColorMode}
+                borderColor="theme.border"
                 rounded="md"
                 overflow="hidden"
                 onClick={() => navigate(`/projects/detail?name=${slugConvertor(project.name)}`)}
-                _focusVisible={{ outline: "2px solid", outlineColor: focusColorMode, rounded: "sm" }}
+                _focusVisible={{ outline: "2px solid", outlineColor: "blue.500", rounded: "sm" }}
               >
                 <Image
                   src={project.image}
@@ -84,7 +83,7 @@ const ProjectSection = () => {
                   <Heading size="md" width="100%" lineClamp={1}>
                     {project.name}
                   </Heading>
-                  <Text color="secondaryTextColor" lineClamp={3} fontSize="xs">
+                  <Text color="theme.textSubtle" lineClamp={3} fontSize="xs">
                     {project.description}
                   </Text>
                 </Flex>
@@ -98,7 +97,7 @@ const ProjectSection = () => {
                       onClick={(e) => {
                         e.stopPropagation();
                       }}
-                      _focusVisible={{ outline: "2px solid", outlineColor: focusColorMode, rounded: "sm" }}
+                      _focusVisible={{ outline: "2px solid", outlineColor: "blue.500", rounded: "sm" }}
                     >
                       <Flex
                         alignItems="center"
@@ -107,10 +106,10 @@ const ProjectSection = () => {
                         rounded="sm"
                         padding="0 0.5rem"
                         border="1px solid"
-                        borderColor={borderColorMode}
+                        borderColor="theme.border"
                         cursor="pointer"
-                        _hover={{ bgColor: bgColorMode, color: textColorMode, transform: "translateY(-3px)" }}
-                        _active={{ bgColor: bgColorMode, color: textColorMode, transform: "translateY(-3px)" }}
+                        _hover={{ bgColor: "theme.bg", color: "theme.text", transform: "translateY(-3px)" }}
+                        _active={{ bgColor: "theme.bg", color: "theme.text", transform: "translateY(-3px)" }}
                         transition="all 0.15s"
                       >
                         <LuScanEye />
@@ -126,7 +125,7 @@ const ProjectSection = () => {
                       onClick={(e) => {
                         e.stopPropagation();
                       }}
-                      _focusVisible={{ outline: "2px solid", outlineColor: focusColorMode, rounded: "sm" }}
+                      _focusVisible={{ outline: "2px solid", outlineColor: "blue.500", rounded: "sm" }}
                     >
                       <Flex
                         alignItems="center"
@@ -135,10 +134,10 @@ const ProjectSection = () => {
                         rounded="sm"
                         padding="0 0.5rem"
                         border="1px solid"
-                        borderColor={borderColorMode}
+                        borderColor="theme.border"
                         cursor="pointer"
-                        _hover={{ bgColor: bgColorMode, color: textColorMode, transform: "translateY(-3px)" }}
-                        _active={{ bgColor: bgColorMode, color: textColorMode, transform: "translateY(-3px)" }}
+                        _hover={{ bgColor: "theme.bg", color: "theme.text", transform: "translateY(-3px)" }}
+                        _active={{ bgColor: "theme.bg", color: "theme.text", transform: "translateY(-3px)" }}
                         transition="all 0.15s"
                       >
                         <LuGithub />

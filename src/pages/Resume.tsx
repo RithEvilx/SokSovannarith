@@ -1,8 +1,6 @@
 import { useRef } from "react";
 import { useReactToPrint } from "react-to-print";
 import { Flex, Button, Center } from "@chakra-ui/react";
-// Style
-import { useColorModeTheme } from "@/apps/styles/style";
 // Icons
 import { TiPrinter } from "react-icons/ti";
 import { RiContactsBook3Fill } from "react-icons/ri";
@@ -51,8 +49,6 @@ const Resume = () => {
     URL.revokeObjectURL(url);
   };
 
-  const { textColorMode, bgColorMode } = useColorModeTheme();
-
   return (
     <Flex width="100%" justifyContent="start" alignItems="center" direction={{ base: "row", md: "column" }} padding="5" gapY={4}>
       <Tooltip showArrow content="Print" positioning={{ placement: "left" }} openDelay={0} closeDelay={100}>
@@ -61,8 +57,8 @@ const Resume = () => {
           display={{ base: "none", sm: "block" }}
           className="print-button"
           zIndex="2000"
-          bgColor={bgColorMode}
-          color={textColorMode}
+          bgColor="theme.bg"
+          color="theme.text"
           shadow="2xl"
           position="fixed"
           height="3.5rem"
@@ -81,8 +77,8 @@ const Resume = () => {
           onClick={downloadContact}
           className="contact-button"
           zIndex="2000"
-          bgColor={bgColorMode}
-          color={textColorMode}
+          bgColor="theme.bg"
+          color="theme.text"
           shadow="2xl"
           position="fixed"
           height="3.5rem"

@@ -1,15 +1,12 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { Button } from "@chakra-ui/react";
-// Style
-import { useColorModeTheme } from "@/apps/styles/style";
 // Icon
 import { LuArrowUp } from "react-icons/lu";
 
 const ScrollToTopButton = () => {
   const { pathname } = useLocation();
   const [isVisible, setIsVisible] = useState(false);
-  const { textColorMode, bgColorMode, borderColorMode } = useColorModeTheme();
 
   useEffect(() => {
     const toggleVisibility = () => {
@@ -47,10 +44,10 @@ const ScrollToTopButton = () => {
       pointerEvents={isVisible ? "auto" : "none"}
       transition="all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)"
       zIndex="skipLink"
-      borderColor={borderColorMode}
+      borderColor="theme.border"
       rounded="full"
-      color={textColorMode}
-      bgColor={bgColorMode}
+      color="theme.text"
+      bgColor="theme.bg"
       _hover={{ transform: "translateX(-50%) scale(1.1)" }}
       backdropFilter="blur(3px)"
     >

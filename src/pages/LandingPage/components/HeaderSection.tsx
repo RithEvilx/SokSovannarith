@@ -5,8 +5,6 @@ import { useColorMode } from "@/apps/providers/color-mode";
 import { Box, Button, Flex, Group, Heading, Image, Span, Text, useBreakpointValue } from "@chakra-ui/react";
 // Images
 import Love from "/imgs/love.png";
-// Style
-import { useColorModeTheme } from "@/apps/styles/style";
 // Icons
 import { LuFileSpreadsheet, LuMail, LuMapPin, LuMoon, LuSun } from "react-icons/lu";
 // Data
@@ -21,7 +19,6 @@ const HeaderSection = () => {
   const [isClicked, setIsClicked] = useState(false);
 
   const { colorMode, toggleColorMode } = useColorMode();
-  const { bgColorMode, textColorMode } = useColorModeTheme();
 
   // Reset clicked state after 3 seconds
   useEffect(() => {
@@ -60,7 +57,7 @@ const HeaderSection = () => {
           minHeight={{ base: "100px", md: "150px", lg: "150px" }}
           rounded="lg"
           border="1px solid"
-          borderColor={colorMode === "dark" ? "borderColorForDark" : "borderColorForLight"}
+          borderColor="theme.border"
           overflow="hidden"
           // Desktop Hover handlers
           onMouseEnter={() => !isMobileOrMd && setIsHovered(true)}
@@ -111,7 +108,7 @@ const HeaderSection = () => {
             </Button>
           </Flex>
           {/* Location */}
-          <Flex alignItems="center" gap="0.35rem" fontSize="xs" color="secondaryTextColor">
+          <Flex alignItems="center" gap="0.35rem" fontSize="xs" color="theme.textSubtle">
             <Span>
               <LuMapPin />
             </Span>
@@ -128,7 +125,7 @@ const HeaderSection = () => {
               paddingInline="1rem"
               alignItems="center"
               variant="outline"
-              _hover={{ bgColor: bgColorMode, color: textColorMode, transform: "translateY(-3px)" }}
+              _hover={{ bgColor: "theme.bg", color: "theme.text", transform: "translateY(-3px)" }}
               transition="all 0.3s"
               rounded="md"
               onClick={handleNavigateResume}
@@ -144,7 +141,7 @@ const HeaderSection = () => {
                 paddingInline="1rem"
                 alignItems="center"
                 variant="outline"
-                _hover={{ bgColor: bgColorMode, color: textColorMode, transform: "translateY(-3px)" }}
+                _hover={{ bgColor: "theme.bg", color: "theme.text", transform: "translateY(-3px)" }}
                 transition="all 0.3s"
                 rounded="md"
               >
@@ -160,8 +157,8 @@ const HeaderSection = () => {
                 variant="outline"
                 fontWeight="semibold"
                 onClick={() => handleChangeLanguage("kh")}
-                bgColor={currentLng === "kh" ? bgColorMode : undefined}
-                color={currentLng === "kh" ? textColorMode : undefined}
+                bgColor={currentLng === "kh" ? "theme.bg" : undefined}
+                color={currentLng === "kh" ? "theme.text" : undefined}
                 _hover={{ transform: "translateY(-3px)" }}
                 _active={{ transform: "translateY(-3px)" }}
               >
@@ -172,8 +169,8 @@ const HeaderSection = () => {
                 variant="outline"
                 fontWeight="semibold"
                 onClick={() => handleChangeLanguage("en")}
-                bgColor={currentLng === "en" ? bgColorMode : undefined}
-                color={currentLng === "en" ? textColorMode : undefined}
+                bgColor={currentLng === "en" ? "theme.bg" : undefined}
+                color={currentLng === "en" ? "theme.text" : undefined}
                 _hover={{ transform: "translateY(-3px)" }}
                 _active={{ transform: "translateY(-3px)" }}
               >
@@ -190,8 +187,8 @@ const HeaderSection = () => {
           paddingInline="1rem"
           alignItems="center"
           variant="outline"
-          _hover={{ bgColor: bgColorMode, color: textColorMode, transform: "translateY(-3px)" }}
-          _active={{ bgColor: bgColorMode, color: textColorMode, transform: "translateY(-3px)" }}
+          _hover={{ bgColor: "theme.bg", color: "theme.text", transform: "translateY(-3px)" }}
+          _active={{ bgColor: "theme.bg", color: "theme.text", transform: "translateY(-3px)" }}
           transition="all 0.3s"
           rounded="md"
           size="xs"
@@ -208,8 +205,8 @@ const HeaderSection = () => {
             paddingInline="1rem"
             alignItems="center"
             variant="outline"
-            _hover={{ bgColor: bgColorMode, color: textColorMode, transform: "translateY(-3px)" }}
-            _active={{ bgColor: bgColorMode, color: textColorMode, transform: "translateY(-3px)" }}
+            _hover={{ bgColor: "theme.bg", color: "theme.text", transform: "translateY(-3px)" }}
+            _active={{ bgColor: "theme.bg", color: "theme.text", transform: "translateY(-3px)" }}
             transition="all 0.3s"
             rounded="md"
             size="xs"
@@ -226,8 +223,8 @@ const HeaderSection = () => {
             variant="outline"
             fontWeight="semibold"
             onClick={() => handleChangeLanguage("kh")}
-            bgColor={currentLng === "kh" ? bgColorMode : undefined}
-            color={currentLng === "kh" ? textColorMode : undefined}
+            bgColor={currentLng === "kh" ? "theme.bg" : undefined}
+            color={currentLng === "kh" ? "theme.text" : undefined}
             size="xs"
             _hover={{ transform: "translateY(-3px)" }}
             _active={{ transform: "translateY(-3px)" }}
@@ -239,8 +236,8 @@ const HeaderSection = () => {
           <Button
             variant="outline"
             onClick={() => handleChangeLanguage("en")}
-            bgColor={currentLng === "en" ? bgColorMode : undefined}
-            color={currentLng === "en" ? textColorMode : undefined}
+            bgColor={currentLng === "en" ? "theme.bg" : undefined}
+            color={currentLng === "en" ? "theme.text" : undefined}
             size="xs"
             _hover={{ transform: "translateY(-3px)" }}
             _active={{ transform: "translateY(-3px)" }}

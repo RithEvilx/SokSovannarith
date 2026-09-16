@@ -48,18 +48,18 @@ const LocalTimeSection = () => {
               {moment(currentTime).format("HH:mm:ss A")}
             </Text>
             {/* Full Date */}
-            <Text fontSize="sm" color="gray.500">
+            <Text fontSize="sm" color="theme.textSubtle">
               {moment(currentTime).format("ddd, DD MMM YYYY")}
             </Text>
           </Flex>
 
           {/* Static Location Info */}
           <Flex direction="column" alignItems="flex-end">
-            <Flex alignItems="center" gap="0.25rem" fontWeight="bold" fontSize="md" color="blue.500">
+            <Flex alignItems="center" gap="0.25rem" fontWeight="bold" fontSize="md" color="theme.accent">
               <LuMapPin />
               <Text>{t("Phnom Penh")}</Text>
             </Flex>
-            <Text fontSize="xs" color="gray.400" fontWeight="medium">
+            <Text fontSize="xs" color="theme.textMuted" fontWeight="medium">
               {t("Cambodia (GMT+7)")}
             </Text>
           </Flex>

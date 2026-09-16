@@ -2,8 +2,6 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useColorMode } from "@/apps/providers/color-mode";
 import { Flex, List, Separator, Text, Timeline } from "@chakra-ui/react";
-// Style
-import { useColorModeTheme } from "@/apps/styles/style";
 
 // Define a generic interface for the data structure
 interface TimelineItemData {
@@ -20,13 +18,13 @@ interface TimelineComponentProps {
 const TimelineComponent = ({ data }: TimelineComponentProps) => {
   const { t } = useTranslation();
   const { colorMode } = useColorMode();
-  const { borderColorMode, textColorMode } = useColorModeTheme();
   const [activeIndex, setActiveIndex] = useState<number | null>(0);
 
   return (
     <Timeline.Root variant="outline" size="sm" width="full">
       {data.map((item, index) => {
         const isSelected = activeIndex === index;
+        // Intentionally inverted vs. current mode — raw tokens, not theme.bg
         const activeBg = colorMode === "dark" ? "bgForLight" : "bgForDark";
         const inactiveBg = colorMode === "dark" ? "bgForDark" : "bgForLight";
 
@@ -38,11 +36,11 @@ const TimelineComponent = ({ data }: TimelineComponentProps) => {
                 cursor="pointer"
                 bgColor={isSelected ? activeBg : inactiveBg}
                 border="1px solid"
-                borderColor={isSelected ? borderColorMode : "#808080"}
+                borderColor={isSelected ? "theme.border" : "#808080"}
                 transition="all 0.2s ease-in-out"
                 _hover={{
                   transform: "scale(1.2)",
-                  borderColor: borderColorMode,
+                  borderColor: "theme.border",
                 }}
               />
             </Timeline.Connector>
@@ -53,7 +51,7 @@ const TimelineComponent = ({ data }: TimelineComponentProps) => {
                   {(item.description?.length ?? 0) > 0 ? t(item.role) : t(item.title)}
                 </Text>
               </Timeline.Title>
-              <Timeline.Description fontWeight="medium" color={isSelected ? textColorMode : "secondaryTextColor"}>
+              <Timeline.Description fontWeight="medium" color={isSelected ? "theme.text" : "theme.textSubtle"}>
                 <Flex alignItems="center" flexWrap="wrap" gap="0.25rem">
                   <Text>{(item.description?.length ?? 0) > 0 ? t(item.title) : t(item.role)}</Text>
                   {item.date && <Separator orientation="vertical" height="3" variant="solid" />}
@@ -65,7 +63,7 @@ const TimelineComponent = ({ data }: TimelineComponentProps) => {
               {item.description && item.description.length > 0 && (
                 <List.Root listStylePosition="inside" marginTop="0.25rem" gap="0.15rem">
                   {item.description.map((desc, idx) => (
-                    <List.Item fontSize="sm" key={idx} color={textColorMode}>
+                    <List.Item fontSize="sm" key={idx} color="theme.text">
                       {t(desc)}
                     </List.Item>
                   ))}

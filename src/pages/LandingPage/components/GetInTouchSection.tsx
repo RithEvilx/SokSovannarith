@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { Box, Button, Center, Flex, GridItem, Heading, Input, Link, SimpleGrid, Span, Text, Textarea } from "@chakra-ui/react";
 // Styles
-import { ContainerHoverStyle, useColorModeTheme } from "@/apps/styles/style";
+import { ContainerHoverStyle } from "@/apps/styles/style";
 // Icons
 import { LuChevronRight } from "react-icons/lu";
 import { FaGithub, FaLinkedin, FaTelegram, FaYoutube } from "react-icons/fa";
@@ -18,7 +18,6 @@ type formDataType = {
 
 const GetInTouchSection = () => {
   const { t } = useTranslation();
-  const { bgColorMode, textColorMode, borderColorMode } = useColorModeTheme();
 
   const { register, handleSubmit, reset } = useForm<formDataType>({
     defaultValues: {
@@ -55,7 +54,7 @@ const GetInTouchSection = () => {
       <SimpleGrid columns={12} gap="1.5rem">
         <GridItem colSpan={{ base: 12, lg: 5 }}>
           <Flex direction="column" gap="0.5rem">
-            <Text color="secondaryTextColor" fontSize="xs">
+            <Text color="theme.textSubtle" fontSize="xs">
               {t("FOLLOW ME")}
             </Text>
             {/* Linkedin */}
@@ -64,11 +63,11 @@ const GetInTouchSection = () => {
                 <Link
                   href={GetInTouchData.linkedin}
                   target="_blank"
-                  _hover={{ bgColor: bgColorMode, color: textColorMode }}
-                  _active={{ bgColor: bgColorMode, color: textColorMode }}
+                  _hover={{ bgColor: "theme.bg", color: "theme.text" }}
+                  _active={{ bgColor: "theme.bg", color: "theme.text" }}
                   transition="all 0.15s"
                 >
-                  <Center as="button" rounded="sm" padding="0.25rem" border="1px solid" borderColor={borderColorMode} cursor="pointer">
+                  <Center as="button" rounded="sm" padding="0.25rem" border="1px solid" borderColor="theme.border" cursor="pointer">
                     <Box fontSize="1.25rem">
                       <FaLinkedin />
                     </Box>
@@ -80,11 +79,11 @@ const GetInTouchSection = () => {
                 <Link
                   href={GetInTouchData.github}
                   target="_blank"
-                  _hover={{ bgColor: bgColorMode, color: textColorMode }}
-                  _active={{ bgColor: bgColorMode, color: textColorMode }}
+                  _hover={{ bgColor: "theme.bg", color: "theme.text" }}
+                  _active={{ bgColor: "theme.bg", color: "theme.text" }}
                   transition="all 0.15s"
                 >
-                  <Center as="button" rounded="sm" padding="0.25rem" border="1px solid" borderColor={borderColorMode} cursor="pointer">
+                  <Center as="button" rounded="sm" padding="0.25rem" border="1px solid" borderColor="theme.border" cursor="pointer">
                     <Box fontSize="1.25rem">
                       <FaGithub />
                     </Box>
@@ -96,11 +95,11 @@ const GetInTouchSection = () => {
                 <Link
                   href={GetInTouchData.telegram}
                   target="_blank"
-                  _hover={{ bgColor: bgColorMode, color: textColorMode }}
-                  _active={{ bgColor: bgColorMode, color: textColorMode }}
+                  _hover={{ bgColor: "theme.bg", color: "theme.text" }}
+                  _active={{ bgColor: "theme.bg", color: "theme.text" }}
                   transition="all 0.15s"
                 >
-                  <Center as="button" rounded="sm" padding="0.25rem" border="1px solid" borderColor={borderColorMode} cursor="pointer">
+                  <Center as="button" rounded="sm" padding="0.25rem" border="1px solid" borderColor="theme.border" cursor="pointer">
                     <Box fontSize="1.25rem">
                       <FaTelegram />
                     </Box>
@@ -112,11 +111,11 @@ const GetInTouchSection = () => {
                 <Link
                   href={GetInTouchData.youtube}
                   target="_blank"
-                  _hover={{ bgColor: bgColorMode, color: textColorMode }}
-                  _active={{ bgColor: bgColorMode, color: textColorMode }}
+                  _hover={{ bgColor: "theme.bg", color: "theme.text" }}
+                  _active={{ bgColor: "theme.bg", color: "theme.text" }}
                   transition="all 0.15s"
                 >
-                  <Center as="button" rounded="sm" padding="0.25rem" border="1px solid" borderColor={borderColorMode} cursor="pointer">
+                  <Center as="button" rounded="sm" padding="0.25rem" border="1px solid" borderColor="theme.border" cursor="pointer">
                     <Box fontSize="1.25rem">
                       <FaYoutube />
                     </Box>
@@ -139,11 +138,11 @@ const GetInTouchSection = () => {
                   alignItems="center"
                   gap="0.25rem"
                   border="1px solid"
-                  borderColor={borderColorMode}
+                  borderColor="theme.border"
                   paddingInline="0.5rem"
                   rounded="sm"
-                  _hover={{ bgColor: bgColorMode, color: textColorMode }}
-                  _active={{ bgColor: bgColorMode, color: textColorMode }}
+                  _hover={{ bgColor: "theme.bg", color: "theme.text" }}
+                  _active={{ bgColor: "theme.bg", color: "theme.text" }}
                   transition="all 0.15s"
                   cursor="pointer"
                   className="group"

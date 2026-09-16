@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { Badge, Box, Flex, Heading, Text } from "@chakra-ui/react";
 // Style
-import { ContainerHoverStyle, useColorModeTheme } from "@/apps/styles/style";
+import { ContainerHoverStyle } from "@/apps/styles/style";
 // Icon
 import { LuChevronRight, LuSettings } from "react-icons/lu";
 import { useNavigate } from "react-router-dom";
@@ -10,7 +10,6 @@ import { TechStackData } from "@/shared/data/TechStackData";
 const TechStackSection = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
-  const { textMutedColorMode, focusColorMode } = useColorModeTheme();
 
   return (
     <Flex {...ContainerHoverStyle}>
@@ -27,12 +26,12 @@ const TechStackSection = () => {
         <Flex
           as="button"
           alignItems="center"
-          color={textMutedColorMode}
+          color="theme.textMuted"
           fontSize="sm"
           className="group"
           cursor="pointer"
           onClick={() => navigate("/tech-stacks")}
-          _focusVisible={{ outline: "2px solid", outlineColor: focusColorMode, rounded: "sm" }}
+          _focusVisible={{ outline: "2px solid", outlineColor: "blue.500", rounded: "sm" }}
         >
           <Text>{t("View All")}</Text>
           <Box _groupHover={{ transform: "translateX(3px)" }} _groupActive={{ transform: "translateX(3px)" }} transition="all 0.15s">
