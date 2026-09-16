@@ -21,7 +21,11 @@ export const tokens = defineTokens({
     },
 
     accent: {
-      50: { value: "blue.500" },
+      50: { value: "#3b82f6" },
+    },
+
+    resumeBg: {
+      50: { value: "#5553b4" }
     },
   },
 });
@@ -38,6 +42,8 @@ export const semanticTokens = defineSemanticTokens({
       border: { value: { base: "{colors.neutral.200}", _dark: "{colors.neutral.700}" } },
 
       accent: { value: { base: "{colors.accent.50}", _dark: "{colors.accent.50}" } },
+
+      resumeBg: { value: { base: "{colors.resumeBg.50}", _dark: "{colors.resumeBg.50}" } },
     },
   },
 });

@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { useColorMode } from "@/apps/providers/color-mode";
 import { Flex, List, Separator, Text, Timeline } from "@chakra-ui/react";
 
 // Define a generic interface for the data structure
@@ -17,16 +16,12 @@ interface TimelineComponentProps {
 
 const TimelineComponent = ({ data }: TimelineComponentProps) => {
   const { t } = useTranslation();
-  const { colorMode } = useColorMode();
   const [activeIndex, setActiveIndex] = useState<number | null>(0);
 
   return (
     <Timeline.Root variant="outline" size="sm" width="full">
       {data.map((item, index) => {
         const isSelected = activeIndex === index;
-        // Intentionally inverted vs. current mode — raw tokens, not theme.bg
-        const activeBg = colorMode === "dark" ? "bgForLight" : "bgForDark";
-        const inactiveBg = colorMode === "dark" ? "bgForDark" : "bgForLight";
 
         return (
           <Timeline.Item key={index} onClick={() => setActiveIndex(index)} cursor="pointer">
@@ -34,9 +29,9 @@ const TimelineComponent = ({ data }: TimelineComponentProps) => {
               <Timeline.Separator />
               <Timeline.Indicator
                 cursor="pointer"
-                bgColor={isSelected ? activeBg : inactiveBg}
+                bgColor={isSelected ? "black" : "transparent"}
                 border="1px solid"
-                borderColor={isSelected ? "theme.border" : "#808080"}
+                borderColor={isSelected ? "black" : "#808080"}
                 transition="all 0.2s ease-in-out"
                 _hover={{
                   transform: "scale(1.2)",

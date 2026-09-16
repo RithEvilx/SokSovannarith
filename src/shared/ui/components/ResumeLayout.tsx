@@ -22,7 +22,7 @@ const ResumeLayout = ({ personalData, printRef, profile }: any) => {
       display={printRef ? "none" : "flex"}
       className={printRef ? "a4-print" : "a4-paper"}
       direction={!printRef ? { base: "column", md: "row" } : "row"}
-      bgColor="#fff"
+      bgColor="theme.bg"
       minWidth={!printRef ? { base: "100%", md: "210mm" } : "210mm"}
       minHeight="297mm"
       height="297mm"
@@ -34,7 +34,7 @@ const ResumeLayout = ({ personalData, printRef, profile }: any) => {
       <VStack
         className="info"
         width={!printRef ? { base: "100%", md: "70mm" } : "70mm"}
-        bgColor="#5553b4"
+        bgColor="theme.resumeBg"
         padding="5"
         gap={1}
         roundedTop={printRef ? "none" : { base: "md", md: "none" }}
@@ -155,8 +155,8 @@ const ResumeLayout = ({ personalData, printRef, profile }: any) => {
         width={!printRef ? { base: "100%", md: "140mm" } : "140mm"}
         padding="5"
         gap={0}
-        bgColor="#fff"
-        color="#000"
+        bgColor="theme.bg"
+        color="theme.text"
         roundedBottom={printRef ? "none" : { base: "md", md: "none" }}
       >
         {/* Personal Detail */}
@@ -167,10 +167,10 @@ const ResumeLayout = ({ personalData, printRef, profile }: any) => {
           marginTop={!printRef ? { base: 0, md: 2 } : 2}
         >
           <VStack flex="1.5" width="100%" alignItems="start" gap="0">
-            <Text fontFamily="Oswald" fontSize="2xl">
+            <Text fontFamily="heading" fontSize="2xl">
               {t(personalData.first_name.toUpperCase())}
             </Text>
-            <Text fontFamily="Oswald" fontSize="2xl">
+            <Text fontFamily="heading" fontSize="2xl">
               {t(personalData.last_name.toUpperCase())}
             </Text>
             <Text color="gray" fontSize="sm">
