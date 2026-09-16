@@ -51,7 +51,7 @@ export const ProjectData: ProjectDataType[] = [
     date: "June 2025",
     description:
       "A technical exploration of modern CSS capabilities. This project demonstrates the power of advanced selectors like :has() and sibling combinators to create interactive UI elements without relying on JavaScript for state management.",
-    stack: ["HTML", "CSS"],
+    stack: ["HTML5", "CSS3"],
     demo: "https://rithevilx.github.io/HoverCardEffect",
     github: "https://github.com/RithEvilx/HoverCardEffect",
     story:
@@ -75,7 +75,7 @@ export const ProjectData: ProjectDataType[] = [
     date: "June 2025",
     description:
       "A smooth, responsive image slider focusing on fluid CSS animations and layout transitions to enhance user engagement through visual storytelling.",
-    stack: ["HTML", "CSS"],
+    stack: ["HTML5", "CSS3"],
     demo: "https://rithevilx.github.io/ImageSlider",
     github: "https://github.com/RithEvilx/ImageSlider",
     story:
@@ -95,7 +95,7 @@ export const ProjectData: ProjectDataType[] = [
     date: "May 2024",
     description:
       "A personal milestone project created after my year-4 final exams. This portfolio serves as a comprehensive showcase of my academic journey, technical skills, and initial professional experiences.",
-    stack: ["HTML", "CSS"],
+    stack: ["HTML5", "CSS3"],
     demo: "https://rithevilx.github.io/soksovannarith",
     github: "https://github.com/RithEvilx/soksovannarith",
     story:
@@ -115,7 +115,7 @@ export const ProjectData: ProjectDataType[] = [
     date: "May 2023",
     description:
       "My first full-page web project following the completion of an HTML short course at ANT Technology Training Center. It focuses on semantic HTML and foundational layout design.",
-    stack: ["HTML", "CSS"],
+    stack: ["HTML5", "CSS3"],
     demo: "https://rithevilx.github.io/sovannarith-camera-store",
     github: "https://github.com/RithEvilx/sovannarith-camera-store",
     story:
@@ -135,7 +135,7 @@ export const ProjectData: ProjectDataType[] = [
     date: "March 2023",
     description:
       "A focused development task from my time at ANT Technology Training Center, designed to practice grid and flexbox layouts within a commercial context.",
-    stack: ["HTML", "CSS"],
+    stack: ["HTML5", "CSS3"],
     demo: "https://rithevilx.github.io/Shop-Car",
     github: "https://github.com/RithEvilx/Shop-Car",
     story:
@@ -155,7 +155,7 @@ export const ProjectData: ProjectDataType[] = [
     date: "January 2023",
     description:
       "A structural clone of the Facebook homepage, focusing on replicating a complex, multi-column layout and mimicking a familiar user interface.",
-    stack: ["HTML", "CSS"],
+    stack: ["HTML5", "CSS3"],
     demo: "https://rithevilx.github.io/Facebook-Homepage/",
     github: "https://github.com/RithEvilx/Facebook-Homepage",
     story:

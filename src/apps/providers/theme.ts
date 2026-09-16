@@ -25,7 +25,8 @@ export const tokens = defineTokens({
     },
 
     resumeBg: {
-      50: { value: "#5553b4" }
+      50: { value: "#5553b4" },
+      100: { value: "#2b275c" }
     },
   },
 });
@@ -43,7 +44,7 @@ export const semanticTokens = defineSemanticTokens({
 
       accent: { value: { base: "{colors.accent.50}", _dark: "{colors.accent.50}" } },
 
-      resumeBg: { value: { base: "{colors.resumeBg.50}", _dark: "{colors.resumeBg.50}" } },
+      resumeBg: { value: { base: "{colors.resumeBg.50}", _dark: "{colors.resumeBg.100}" } },
     },
   },
 });

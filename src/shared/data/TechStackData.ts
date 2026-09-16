@@ -4,21 +4,12 @@ export const TechStackData: TechStackDataType[] = [
   {
     category: "Frontend",
     // Prioritizing the React/TS ecosystem for a Frontend-focused role
-    skills: [
-      "React",
-      "TypeScript",
-      "JavaScript",
-      "TanStack Query",
-      "HTML",
-      "CSS",
-      "Vite",
-      "Chakra UI",
-    ],
+    skills: ["ReactJS", "TypeScript", "JavaScript", "TanStack Query", "HTML5", "CSS3", "Vite", "Chakra UI"],
   },
   {
     category: "Backend & Database",
     // Showing you can handle the full data lifecycle
-    skills: ["Java (familiar)", "SQL (familiar)"],
+    skills: ["Java (familiar)", "SQL (familiar)", "SpringBoot (familiar)", "NodeJS (familiar)", "ExpressJS (familiar)"],
   },
   {
     category: "Tools",
@@ -27,12 +18,7 @@ export const TechStackData: TechStackDataType[] = [
   },
   {
     category: "Design & UX", // Or your chosen 4th category
-    skills: [
-      "Figma (familiar)",
-      "Responsive Design",
-      "Framer Motion (familiar)",
-      "Accessibility",
-    ],
+    skills: ["Figma (familiar)", "Responsive Design", "Framer Motion (familiar)", "Accessibility", "SEO"],
   },
   {
     category: "Mobile & Cross-Platform",
