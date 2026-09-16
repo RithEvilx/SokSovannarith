@@ -16,7 +16,7 @@ const TechStackSection = () => {
       {/* Header */}
       <Flex alignItems="center" justifyContent="space-between">
         <Flex alignItems="center" gap="0.5rem">
-          <Box fontSize={{ base: "1.25rem", md: "1.15rem" }}>
+                <Box paddingBottom="0.35rem" fontSize="1.25rem">
             <LuSettings />
           </Box>
           <Text fontWeight="semibold" fontSize={{ base: "lg", lg: "xl" }}>

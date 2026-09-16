@@ -1,6 +1,10 @@
 import { defineConfig, defineSemanticTokens, defineTokens } from "@chakra-ui/react";
 
 export const tokens = defineTokens({
+  fonts: {
+    body: { value: `'DMSans', 'NotoSansKhmer', serif` },
+    heading: { value: `'DMSans', 'NotoSansKhmer', serif` },
+  },
   colors: {
     // ─── Neutral ────────────
     neutral: {

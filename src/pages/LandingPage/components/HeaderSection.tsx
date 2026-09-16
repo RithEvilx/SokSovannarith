@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { useColorMode } from "@/apps/providers/color-mode";
-import { Box, Button, Flex, Group, Heading, Image, Span, Text, useBreakpointValue } from "@chakra-ui/react";
+import { Box, Button, Flex, Group, Heading, Image, Text, useBreakpointValue } from "@chakra-ui/react";
 // Images
 import Love from "/imgs/love.png";
 // Icons
@@ -30,11 +30,10 @@ const HeaderSection = () => {
     }
   }, [isClicked]);
 
-  const currentLng = i18n.language;
+  const currentLng = i18n.resolvedLanguage;
 
-  const handleChangeLanguage = (next: "en" | "kh") => {
+  const handleChangeLanguage = (next: "en" | "km") => {
     i18n.changeLanguage(next);
-    localStorage.setItem("language", next);
   };
 
   // Only apply click behavior on mobile/md, not on lg
@@ -109,13 +108,17 @@ const HeaderSection = () => {
           </Flex>
           {/* Location */}
           <Flex alignItems="center" gap="0.35rem" fontSize="xs" color="theme.textSubtle">
-            <Span>
+            <Box paddingBottom="0.35rem">
               <LuMapPin />
-            </Span>
+            </Box>
             <Text>{t(`${ProfileData.location}`)}</Text>
           </Flex>
           {/* Role */}
-          <Text fontWeight="semibold" marginBlock={{ base: "0.45rem 0.25rem", md: "0.35rem" }} fontSize={{ base: "sm", md: "md" }}>
+          <Text
+            fontWeight="semibold"
+            marginBlock={{ base: "0.45rem 0.25rem", md: "0.35rem" }}
+            fontSize={{ base: "sm", md: "md" }}
+          >
             {t(`${ProfileData.role}`)}
           </Text>
           {/* Actions Button - Table & Desktop */}
@@ -154,19 +157,19 @@ const HeaderSection = () => {
             {/* Language Switcher */}
             <Group attached rounded="lg">
               <Button
-                variant="outline"
+                variant={currentLng === "km" ? "surface" : "outline"}
                 fontWeight="semibold"
-                onClick={() => handleChangeLanguage("kh")}
-                bgColor={currentLng === "kh" ? "theme.bg" : undefined}
-                color={currentLng === "kh" ? "theme.text" : undefined}
+                onClick={() => handleChangeLanguage("km")}
+                bgColor={currentLng === "km" ? "theme.bg" : undefined}
+                color={currentLng === "km" ? "theme.text" : undefined}
                 _hover={{ transform: "translateY(-3px)" }}
                 _active={{ transform: "translateY(-3px)" }}
               >
-                {t("KH")}
+                {t("KM")}
               </Button>
 
               <Button
-                variant="outline"
+                 variant={currentLng === "en" ? "surface" : "outline"}
                 fontWeight="semibold"
                 onClick={() => handleChangeLanguage("en")}
                 bgColor={currentLng === "en" ? "theme.bg" : undefined}
@@ -222,15 +225,15 @@ const HeaderSection = () => {
           <Button
             variant="outline"
             fontWeight="semibold"
-            onClick={() => handleChangeLanguage("kh")}
-            bgColor={currentLng === "kh" ? "theme.bg" : undefined}
-            color={currentLng === "kh" ? "theme.text" : undefined}
+            onClick={() => handleChangeLanguage("km")}
+            bgColor={currentLng === "km" ? "theme.bg" : undefined}
+            color={currentLng === "km" ? "theme.text" : undefined}
             size="xs"
             _hover={{ transform: "translateY(-3px)" }}
             _active={{ transform: "translateY(-3px)" }}
             transition="all 0.3s"
           >
-            {t("KH")}
+            {t("KM")}
           </Button>
 
           <Button

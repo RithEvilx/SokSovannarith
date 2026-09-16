@@ -19,7 +19,7 @@ const ProjectSection = () => {
       {/* Header */}
       <Flex alignItems="center" justifyContent="space-between">
         <Flex alignItems="center" gap="0.5rem">
-          <Box fontSize={{ base: "1.25rem", md: "1.15rem" }}>
+          <Box paddingBottom="0.35rem" fontSize="1.25rem">
             <LuFolderCode />
           </Box>
           <Text fontWeight="semibold" fontSize={{ base: "lg", lg: "xl" }}>
@@ -37,7 +37,11 @@ const ProjectSection = () => {
           _focusVisible={{ outline: "2px solid", outlineColor: "blue.500", rounded: "sm" }}
         >
           <Text>{t("View All")}</Text>
-          <Box _groupHover={{ transform: "translateX(3px)" }} _groupActive={{ transform: "translateX(3px)" }} transition="all 0.15s">
+          <Box
+            _groupHover={{ transform: "translateX(3px)" }}
+            _groupActive={{ transform: "translateX(3px)" }}
+            transition="all 0.15s"
+          >
             <LuChevronRight />
           </Box>
         </Flex>
@@ -88,7 +92,7 @@ const ProjectSection = () => {
                   </Text>
                 </Flex>
                 {/* Actions  */}
-                <Flex gap="0.35rem" justifyContent='flex-end'>
+                <Flex gap="0.35rem" justifyContent="flex-end">
                   {project?.demo && (
                     <Link
                       href={project.demo}

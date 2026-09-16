@@ -16,7 +16,7 @@ const BeyondScreenSection = () => {
         {/* Header Section */}
         <Flex alignItems="center" justifyContent="space-between">
           <Flex alignItems="center" gap="0.5rem">
-            <Box fontSize="1.25rem">
+            <Box paddingBottom="0.35rem" fontSize="1.25rem">
               <LuFullscreen />
             </Box>
             <Text fontWeight="semibold" fontSize={{ base: "lg", lg: "xl" }}>

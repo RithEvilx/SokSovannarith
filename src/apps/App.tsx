@@ -1,5 +1,4 @@
 import "./providers/i18next";
-import { changeLanguage } from "i18next";
 import { version } from "../../package.json";
 import { useEffect, useState } from "react";
 import { Float } from "@chakra-ui/react";
@@ -16,12 +15,8 @@ const App = () => {
       if (localStorage.getItem(key) === null) localStorage.setItem(key, value);
     };
 
-    setDefault("language", "en");
     setDefault("debug", "false");
     setDefault("projectDate", "false");
-
-    const lng = localStorage.getItem("language") || "en";
-    changeLanguage(lng);
   }, []);
 
   return (

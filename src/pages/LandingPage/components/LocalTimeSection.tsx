@@ -1,7 +1,7 @@
 import moment from "moment";
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { Box, Flex, Text } from "@chakra-ui/react";
+import { Box, Flex, HStack, Text } from "@chakra-ui/react";
 // Style
 import { ContainerHoverStyle } from "@/apps/styles/style";
 // Icon
@@ -31,7 +31,7 @@ const LocalTimeSection = () => {
     >
       {/* Header */}
       <Flex alignItems="center" gap="0.5rem">
-        <Box fontSize="1.25rem">
+        <Box paddingBottom="0.35rem" fontSize="1.25rem">
           <LuTimer />
         </Box>
         <Text fontWeight="semibold" fontSize={{ base: "lg", lg: "xl" }}>
@@ -55,10 +55,14 @@ const LocalTimeSection = () => {
 
           {/* Static Location Info */}
           <Flex direction="column" alignItems="flex-end">
-            <Flex alignItems="center" gap="0.25rem" fontWeight="bold" fontSize="md" color="theme.accent">
-              <LuMapPin />
-              <Text>{t("Phnom Penh")}</Text>
-            </Flex>
+            <HStack alignItems="center" gap={1} fontSize="md" color="theme.accent">
+              <Box paddingBottom="0.35rem">
+                <LuMapPin />
+              </Box>
+              <Text fontWeight="semibold" lineHeight={1}>
+                {t("Phnom Penh")}
+              </Text>
+            </HStack>
             <Text fontSize="xs" color="theme.textMuted" fontWeight="medium">
               {t("Cambodia (GMT+7)")}
             </Text>

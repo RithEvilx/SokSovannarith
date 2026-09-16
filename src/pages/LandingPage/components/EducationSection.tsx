@@ -16,7 +16,7 @@ const EducationSection = () => {
     <Flex {...ContainerHoverStyle} paddingBottom="0.25rem">
       {/* Header */}
       <Flex alignItems="center" gap="0.5rem">
-        <Box fontSize={{ base: "1.25rem", md: "1.15rem" }}>
+        <Box paddingBottom="0.35rem" fontSize="1.25rem">
           <LuGraduationCap />
         </Box>
         <Text fontWeight="semibold" fontSize={{ base: "lg", lg: "xl" }}>
