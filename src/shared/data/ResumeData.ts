@@ -19,10 +19,13 @@ export const personal_curriculumn_vitae: personalData = {
       position: "Frontend Developer",
       duration: "Mar 2025 - Present",
       responsibility: [
-        "Led frontend development of a scalable hotel booking platform using React.js, TypeScript, and Chakra UI (v3)",
-        "Integrated secure, real-time payment processing via the ABA Bank API",
-        "Engineered internal management interfaces and dashboards for resource monitoring and role-based control",
-        "Optimized application performance and caching using TanStack React Query",
+        "Develop accommodation booking platforms, including resort booking websites and an Online Travel Agency (OTA) platform, using React.js and TypeScript.",
+        "Built an internal administration dashboard comprising 16 modules, featuring role-based access control (RBAC), reporting, and PDF/Excel export functionality using React.js and Chakra UI v2.",
+        "Integrated ABA PayWay into a resort booking website to enable secure online payment processing.",
+        "Develop internal administrative systems and management interfaces to support operational workflows, resource monitoring, and system control.",
+        "Implement efficient data fetching, caching, and server-state management using TanStack Query (formerly React Query).",
+        "Build responsive, accessible user interfaces using Chakra UI v3 across subsequent projects, following modern frontend development practices.",
+        "Collaborate with the development team using Git/GitHub and Agile workflows to deliver features and support production releases.",
       ],
     },
   ],
@@ -60,9 +63,5 @@ export const personal_curriculumn_vitae: personalData = {
     { name: "English", value: 60 },
   ],
   references: [],
-  hobbies: [
-    "Exploring emerging technologies",
-    "Continuous learning and skill development",
-    "Listening to music",
-  ],
+  hobbies: ["Exploring emerging technologies", "Continuous learning and skill development", "Listening to music"],
 };
