@@ -36,6 +36,16 @@ export const personal_curriculumn_vitae: personalData = {
       duration: "2020 - 2024",
     },
     {
+      school: "ANT Technology Training Center",
+      degree: "Short Course: CSS, CSS3, Bootstrap 5",
+      duration: "Aug 2023 - Oct 2023",
+    },
+    {
+      school: "ANT Technology Training Center",
+      degree: "Short Course: HTML, HTML5",
+      duration: "Feb 2023 - Apr 2023",
+    },
+    {
       school: "BELTEI INTERNATIONAL SCHOOL",
       degree: "High School Diploma",
       duration: "2019 - 2020",
