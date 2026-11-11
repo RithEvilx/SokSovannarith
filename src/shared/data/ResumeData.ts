@@ -17,7 +17,7 @@ export const personal_curriculumn_vitae: personalData = {
     {
       company: "UDAYA Technology",
       position: "Frontend Developer",
-      duration: "Mar 2025 - Present",
+      duration: "Mar 2025 - Nov 2026",
       responsibility: [
         "Develop accommodation booking platforms, including resort booking websites and an Online Travel Agency (OTA) platform, using React.js and TypeScript.",
         "Built an internal administration dashboard comprising 16 modules, featuring role-based access control (RBAC), reporting, and PDF/Excel export functionality using React.js and Chakra UI v2.",

@@ -4,7 +4,7 @@ export const WorkExperienceData: WorkExperienceDataType[] = [
   {
     title: "UDAYA Technology",
     role: "Frontend Developer",
-    date: "Mar 2025 - Present",
+    date: "Mar 2025 - Nov 2026",
     description: [
       "Develop accommodation booking platforms, including resort booking websites and an Online Travel Agency (OTA) platform, using React.js and TypeScript.",
       "Built an internal administration dashboard comprising 16 modules, featuring role-based access control (RBAC), reporting, and PDF/Excel export functionality using React.js and Chakra UI v2.",
